@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p >{{message}}</p>
+			<ul>
+				<li v-for="item in list">{{item}}</li>
+			</ul>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue",
+					list:[1,2,3,4,5,6]
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 }
+				}
+			})
+		</script>
+	</body>
+</html>

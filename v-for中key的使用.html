@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<label>Id
+				<input v-model="id" type="text" />
+			</label>
+			<label>Name
+				<input v-model="name" type="text" />
+			</label>
+			<input type="button" name="" id="" value="添加" @click="add" />
+			
+			<p v-for="(item,index) in list" :key="item.id">
+			<input type="checkbox" name="" id="" value="" />
+			{{item.id}} ---- {{item.name}}
+			</p>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue",
+					id:"",
+					name:"",
+					list:[
+						{id:"1",name:"李斯"},
+						{id:"2",name:"嬴政"},
+						{id:"3",name:"韩非"},
+						{id:"4",name:"荀子"}
+						]
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 },
+					 add(){
+						this.list.push({id:this.id,name:this.name}); 
+					 }
+				}
+			})
+		</script>
+	</body>
+</html>

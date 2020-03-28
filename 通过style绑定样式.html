@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p :style="{color:'red',backgroundColor:'red'}">{{message}}</p>
+			<p :style="[colorObj1,colorObj2]">我是style对象里面的样式</p>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue",
+					colorObj1:{color:'red',fontSize:"18px",letterSpacing:"0.5em"},
+					colorObj2:{fontFamily:'宋体',fontStyle:"italic",width:"240px"}
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 }
+				}
+			})
+		</script>
+	</body>
+</html>

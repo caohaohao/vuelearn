@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="点击" @click="message='不学了'" />
+			<p id="p">{{message}}</p>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue"
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 }
+				},
+				beforeCreate(){
+					
+				},
+				created() {
+					
+				},
+				beforeMount() {
+					//console.log(document.getElementById('p').innerHTML);
+					//console.log(this.message);
+				},
+				mounted() {
+					//console.log(document.getElementById('p').innerHTML);
+					//console.log(this.message);
+				},
+				beforeUpdate(){
+					console.log(document.getElementById('p').innerHTML);
+					console.log(this.message);
+				},
+				updated(){
+					console.log(document.getElementById('p').innerHTML);
+					console.log(this.message);
+				},
+				beforeDestroy(){
+					alert(this.data);
+				},
+				destroyed() {
+					
+				}
+				
+				
+			})
+		</script>
+	</body>
+</html>

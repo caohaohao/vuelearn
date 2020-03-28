@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message | msgFormat('疯狂','+1') | test }}</p>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			Vue.filter('msgFormat',function(msg,arg,arg2){
+				return msg.replace(/单纯/g, arg+arg2)
+			})
+			Vue.filter('test',function(msg){
+				return msg + "------"
+			})
+			
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"曾经的我也是一个单纯的男人,单纯的问经常问世界最单纯的人是谁"
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 }
+				}
+			})
+		</script>
+	</body>
+</html>

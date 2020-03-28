@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.red {
+				color: red;
+			}
+
+			.thin {
+				font-weight: 200;
+			}
+
+			.italic {
+				font-style: italic;
+			}
+
+			.active {
+				letter-spacing: 0.5em;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p :class="['red',{active:flag}]">{{message}}</p>
+			<h1 :class="['red',flag?'active':'']"></h1>
+			<ul>
+				<li  v-for="(item,index) in arr" :class="[{active:flag}]">{{item}}{{index}}</li>
+			</ul>
+			<h2 :class="{red:flag}"> 通过对象方式添加类名</h2>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					message: "欢迎学习vue",
+					flag: true,
+					arr: ["苹果", "香蕉", "菠萝", "甘蔗", "西瓜"]
+				},
+				methods: {
+					show: function() {
+						alert(123);
+					}
+					
+
+				}
+			
+			})
+		</script>
+	</body>
+</html>

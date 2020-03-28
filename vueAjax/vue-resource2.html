@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+		</div>
+		<script src="../lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			Vue.http.options.root = 'http://www.liulongbin.top:3005/'
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue"
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 },
+					 getAllList(){
+						this.$http.get('api/getnewslist').then(function(res){
+							console.log(res)
+						})
+					 }
+					 
+				},
+				mounted(){
+					this.getAllList();
+				}
+			})
+		</script>
+	</body>
+</html>

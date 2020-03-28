@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<button :title="title + '123' " @click = "show">按钮</button>
+		</div>
+		<script src="./lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					message:"欢迎学习vue",
+					title:'显示标题'
+				},
+				methods:{
+					 show:function(){
+						 alert(123);
+					 }
+				}
+				     
+			})
+		</script>
+	</body>
+</html>
