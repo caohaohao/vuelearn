@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .ball {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" @click="flag=!flag" value="滚动小球" />
+        <transition name="" mode="" @before-enter="beforeEnter" @enter="enter">
+            <h3 class="ball" v-show="flag"></h3>
+        </transition>
+    </div>
+    <script src="../lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "欢迎学习vue",
+                flag: false
+            },
+            methods: {
+                show: function () {
+                    alert(123);
+                },
+                beforeEnter(el) {
+                    console.log(el)
+                    el.style.transform = 'translate(0,0)';
+                },
+                enter(el) {
+                    el.offsetWidth;
+                    el.style.transform = 'translate(100px,100px)';
+                    el.style.transition = 'all 1s ease';
+                }
+            }
+        })
+        var name = 'chh'
+        console.log(name)
+        function add() {
+            var message = "一条短信"
+            console.log(message)
+        }
+
+    </script>
+</body>
+
+</html>
