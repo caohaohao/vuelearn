@@ -17,7 +17,11 @@
 <body>
     <div id="app">
         <input type="button" @click="flag=!flag" value="滚动小球" />
-        <transition name="" mode="" @before-enter="beforeEnter" @enter="enter">
+        <transition name="" mode=""
+         @before-enter="beforeEnter"
+         @enter="enter"
+         @after-enter="afterEnter"
+         >
             <h3 class="ball" v-show="flag"></h3>
         </transition>
     </div>
@@ -37,11 +41,16 @@
                     console.log(el)
                     el.style.transform = 'translate(0,0)';
                 },
-                enter(el) {
+                enter(el, done) {
                     el.offsetWidth;
                     el.style.transform = 'translate(100px,100px)';
                     el.style.transition = 'all 1s ease';
+                    done();
+                },
+                afterEnter(el){
+                    this.flag = !this.flag;
                 }
+
             }
         })
         var name = 'chh'

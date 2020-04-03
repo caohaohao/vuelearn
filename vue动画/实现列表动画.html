@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        li{
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            margin-top:6px;
+            border:1px dashed #ddd;
+            width:100%;
+        }
+        .v-enter, .v-leave-to{
+            transform: translateY(80px);
+            opacity: 0;
+        }
+        .v-enter-active, .v-leave-active{
+            transition: all 0.3s ease;
+            
+        }  
+        .v-move{
+            transition: all 0.3s ease;
+        }     
+        .v-leave-active{
+            position: absolute;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="app">
+        id:<input type="text" value="id" v-model="id" />
+        name:<input type="text" value="name"  v-model="name" />
+        <input type="button" value="添加" v-on:click="add">
+
+            <transition-group tag="ul" appear name="">
+                <li v-for="(item,index) in list" :key="item.id" v-on:click="del(index)">{{item.id}}-----{{item.name}}</li>
+            </transition-group>
+    </div>
+    <script src="../lib/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "欢迎学习vue",
+                id:'',
+                name:'',
+                list:[
+                    {id:'1',name:'康熙'},
+                    {id:'2',name:'雍正'},
+                    {id:'3',name:'乾隆'},
+                    {id:'4',name:'嘉庆'},
+                ]
+            },
+            methods: {
+                show: function () {
+                    alert(123);
+                },
+                add(){
+                    this.list.push({id:this.id,name:this.name});
+                    this.id = this.name = '';
+                },
+                del(index){
+                    console.log(index)
+                    this.list.splice(index,1);
+                }
+            }
+        })
+        var arr = ['qq','wqwqw','qwqw','qwqw']
+        console.log(arr.splice(1,3,"sdf","sdfsf"));
+        console.log(arr);
+        function add() {
+            var message = "一条短信"
+            console.log(message)
+        }
+
+    </script>
+</body>
+
+</html>

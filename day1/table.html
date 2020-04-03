@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>表格头部固定</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <style type="text/css">
+        table tbody {
+            display: block;
+            height: 500px;
+            overflow-y: auto;
+        }
+
+        table thead,
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        table thead th,
+        tbody tr td{
+            text-align: left;
+        }
+        table thead {
+           width:100%;
+        }
+        table thead th:nth-child(1),
+        tbody tr td:nth-child(1){
+            width:100px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table class="table table-condensed table-hover table-bordered">
+        <thead id="theadHeight">
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>职业</th>
+                <th>毕业学校</th>
+                <th>工作年限</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyHeight">
+            <tr id="trHeight">
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>曹浩浩</td>
+                <td>web前端</td>
+                <td>山东大学</td>
+                <td>工作五年</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+<script>
+     var trHeight = document.getElementById("trHeight");
+     var tbodyHeight = document.getElementById("tbodyHeight");
+     var theadHeight = document.getElementById("theadHeight");
+     if(trHeight.offsetWidth==tbodyHeight.offsetWidth){
+
+     }else{
+        theadHeight.style.width = "calc(100% - 16px)";
+     }
+</script>
+</body>
+
+</html>
